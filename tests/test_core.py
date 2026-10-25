@@ -100,3 +100,14 @@ def test_lds_plan_is_consistent(protos):
     bp, _ = L.build(protos, L.Params(normal_foundries=4))
     s = bp.to_string()
     assert codec.decode(s)["blueprint"]["entities"]
+
+
+def test_find_factorio_uses_dot_factorio(tmp_path, monkeypatch):
+    from fbs.testbench.headless import find_factorio
+    binary = tmp_path / "install" / "factorio" / "bin" / "x64" / "factorio"
+    binary.parent.mkdir(parents=True)
+    binary.write_text("")
+    (tmp_path / ".factorio").symlink_to(tmp_path / "install" / "factorio")
+    monkeypatch.chdir(tmp_path)
+    monkeypatch.delenv("FBS_FACTORIO", raising=False)
+    assert find_factorio() == binary.resolve()

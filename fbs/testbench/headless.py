@@ -33,7 +33,7 @@ def find_factorio(explicit: str | os.PathLike | None = None) -> Path:
     if os.environ.get("FBS_FACTORIO"):
         candidates.append(Path(os.environ["FBS_FACTORIO"]))
     here = Path.cwd()
-    candidates += [here / ".factorio" / "factorio", Path.home() / ".cache" / "fbs" / "factorio"]
+    candidates += [here / ".factorio", Path.home() / ".cache" / "fbs" / "factorio"]
     for c in candidates:
         if c.is_dir():
             c = c / "bin" / "x64" / "factorio"
