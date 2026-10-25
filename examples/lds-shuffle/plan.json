@@ -1,0 +1,83 @@
+{
+ "plan": {
+  "foundries": [
+   12,
+   2,
+   1,
+   1
+  ],
+  "lds_recyclers": 14,
+  "void_recyclers": 28,
+  "plastic_input_per_s": 9.187,
+  "legendary_per_hour": {
+   "plastic-bar": 148.5,
+   "copper-plate": 807.6,
+   "steel-plate": 80.8
+  },
+  "flows": {
+   "crafts_per_s": [
+    2.56,
+    0.3451,
+    0.1106,
+    0.0329,
+    0.0
+   ],
+   "lds_per_s": [
+    3.4406,
+    1.0537,
+    0.2872,
+    0.0836,
+    0.0128
+   ],
+   "plastic_back_per_s": [
+    3.6127,
+    1.7257,
+    0.5531,
+    0.1646,
+    0.0413
+   ],
+   "copper_per_s": [
+    14.4507,
+    6.9028,
+    2.2126,
+    0.6585,
+    0.165
+   ],
+   "steel_per_s": [
+    1.4451,
+    0.6903,
+    0.2213,
+    0.0658,
+    0.0165
+   ],
+   "foundry_speed": 3.2,
+   "foundry_productivity": 0.6,
+   "foundry_quality": 0.16,
+   "recycler_quality": 0.16
+  }
+ },
+ "params": {
+  "normal_foundries": 12,
+  "foundry": "foundry",
+  "recycler": "recycler",
+  "inserter": "bulk-inserter",
+  "foundry_modules": "quality-module-3@rare",
+  "recycler_modules": "quality-module-3@rare",
+  "void_modules": "quality-module-3@rare",
+  "lds_productivity_research": 1,
+  "recycle_legendary_lds": true,
+  "keep_legendary": [
+   "plastic-bar",
+   "copper-plate",
+   "steel-plate"
+  ],
+  "headroom": 1.15,
+  "foundries": null,
+  "lds_recyclers": null,
+  "void_recyclers": null,
+  "unfiltered_storage": 12,
+  "roboport_spacing": 16,
+  "robots_per_roboport": 60,
+  "label": "LDS shuffle (fbs)"
+ }
+}

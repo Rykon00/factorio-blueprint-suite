@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.factorio
+.factorio-install/
+out/
+*.egg-info/
+.pytest_cache/

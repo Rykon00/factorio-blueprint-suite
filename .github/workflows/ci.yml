@@ -1,0 +1,55 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -e .[dev]
+      - run: pytest -q
+
+  engine:
+    # builds and runs the generated LDS shuffle in the real headless server
+    runs-on: ubuntu-latest
+    needs: unit
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -e .
+      - name: Cache headless
+        uses: actions/cache@v4
+        with:
+          path: .factorio-install
+          key: headless-2.1.23
+      - run: |
+          if [ ! -x .factorio-install/factorio/bin/x64/factorio ]; then scripts/setup_headless.sh 2.1.23; else ln -sfn .factorio-install/factorio .factorio; fi
+      - name: Generate and test LDS shuffle
+        run: |
+          fbs gen lds-shuffle -o out -p normal_foundries=6 --test --minutes 20 --robots 60 --tech low-density-structure-productivity=1
+          python - <<'PY'
+          import json, sys
+          rep = json.load(open("out/report.json"))
+          legendary = {k: v for k, v in rep.get("produced_per_hour", {}).items() if k.endswith("@legendary")}
+          util = rep["utilisation"]
+          normal = next(v for k, v in util.items() if "casting-low-density-structure|normal" in k)
+          print("legendary/h:", legendary, "normal foundries working:", normal["working"])
+          problems = [p for p in rep["problems"]]
+          if problems or rep["build"]["failed"] or normal["working"] < 0.85 or legendary.get("plastic-bar@legendary", 0) <= 0:
+              print("problems:", problems)
+              sys.exit(1)
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lds-shuffle
+          path: out/

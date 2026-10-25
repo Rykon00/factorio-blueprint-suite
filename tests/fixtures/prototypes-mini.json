@@ -1,0 +1,837 @@
+{
+"entities": {
+"foundry": {
+"type": "assembling-machine",
+"tile_width": 5,
+"tile_height": 5,
+"collision_box": [
+-2.19921875,
+-2.19921875,
+2.19921875,
+2.19921875
+],
+"module_slots": 4,
+"flags": {
+"placeable-neutral": true,
+"player-creation": true
+},
+"fluidboxes": [
+{
+"production_type": "input",
+"connections": [
+{
+"position": [
+-1,
+2
+],
+"direction": 8,
+"type": "normal",
+"flow": "input"
+}
+]
+},
+{
+"production_type": "input",
+"connections": [
+{
+"position": [
+1,
+2
+],
+"direction": 8,
+"type": "normal",
+"flow": "input"
+}
+]
+},
+{
+"production_type": "output",
+"connections": [
+{
+"position": [
+-1,
+-2
+],
+"direction": 0,
+"type": "normal",
+"flow": "output"
+}
+]
+},
+{
+"production_type": "output",
+"connections": [
+{
+"position": [
+1,
+-2
+],
+"direction": 0,
+"type": "normal",
+"flow": "output"
+}
+]
+}
+],
+"crafting_speed": 4,
+"crafting_categories": [
+"metallurgy",
+"parameters"
+],
+"max_wire_distance": 9,
+"effect_receiver": {
+"base_effect": {
+"productivity": 0.5
+},
+"uses_module_effects": true,
+"uses_beacon_effects": true,
+"uses_surface_effects": true,
+"uses_local_effects": true,
+"consumption_limits": {
+"low": -0.8,
+"high": 1000
+},
+"speed_limits": {
+"low": -0.8,
+"high": 1000
+},
+"productivity_limits": {
+"low": -0.8,
+"high": 1000
+},
+"pollution_limits": {
+"low": -0.8,
+"high": 1000
+},
+"quality_limits": {
+"low": 0,
+"high": 1000
+}
+},
+"allowed_effects": {
+"consumption": true,
+"speed": true,
+"productivity": true,
+"pollution": true,
+"quality": true
+}
+},
+"recycler": {
+"type": "furnace",
+"tile_width": 2,
+"tile_height": 4,
+"collision_box": [
+-0.69921875,
+-1.69921875,
+0.69921875,
+1.69921875
+],
+"module_slots": 4,
+"flags": {
+"placeable-neutral": true,
+"placeable-player": true,
+"player-creation": true
+},
+"crafting_speed": 0.5,
+"crafting_categories": [
+"recycling"
+],
+"vector_to_place_result": [
+-0.35,
+-2.3
+],
+"max_wire_distance": 9,
+"effect_receiver": {
+"base_effect": {},
+"uses_module_effects": true,
+"uses_beacon_effects": true,
+"uses_surface_effects": true,
+"uses_local_effects": true,
+"consumption_limits": {
+"low": -0.8,
+"high": 1000
+},
+"speed_limits": {
+"low": -0.8,
+"high": 1000
+},
+"productivity_limits": {
+"low": -0.8,
+"high": 1000
+},
+"pollution_limits": {
+"low": -0.8,
+"high": 1000
+},
+"quality_limits": {
+"low": 0,
+"high": 1000
+}
+},
+"allowed_effects": {
+"consumption": true,
+"speed": true,
+"productivity": false,
+"pollution": true,
+"quality": true
+}
+},
+"bulk-inserter": {
+"type": "inserter",
+"tile_width": 1,
+"tile_height": 1,
+"collision_box": [
+-0.1484375,
+-0.1484375,
+0.1484375,
+0.1484375
+],
+"module_slots": 0,
+"flags": {
+"placeable-neutral": true,
+"placeable-player": true,
+"player-creation": true
+},
+"crafting_categories": {},
+"max_wire_distance": 9,
+"inserter_pickup_position": [
+0,
+-1
+],
+"inserter_drop_position": [
+0,
+1.2
+]
+},
+"requester-chest": {
+"type": "logistic-container",
+"tile_width": 1,
+"tile_height": 1,
+"collision_box": [
+-0.34765625,
+-0.34765625,
+0.34765625,
+0.34765625
+],
+"module_slots": 0,
+"flags": {
+"placeable-player": true,
+"player-creation": true
+},
+"crafting_categories": {},
+"max_wire_distance": 9
+},
+"storage-chest": {
+"type": "logistic-container",
+"tile_width": 1,
+"tile_height": 1,
+"collision_box": [
+-0.34765625,
+-0.34765625,
+0.34765625,
+0.34765625
+],
+"module_slots": 0,
+"flags": {
+"placeable-player": true,
+"player-creation": true
+},
+"crafting_categories": {},
+"max_wire_distance": 9
+},
+"passive-provider-chest": {
+"type": "logistic-container",
+"tile_width": 1,
+"tile_height": 1,
+"collision_box": [
+-0.34765625,
+-0.34765625,
+0.34765625,
+0.34765625
+],
+"module_slots": 0,
+"flags": {
+"placeable-player": true,
+"player-creation": true
+},
+"crafting_categories": {},
+"max_wire_distance": 9
+},
+"active-provider-chest": {
+"type": "logistic-container",
+"tile_width": 1,
+"tile_height": 1,
+"collision_box": [
+-0.34765625,
+-0.34765625,
+0.34765625,
+0.34765625
+],
+"module_slots": 0,
+"flags": {
+"placeable-player": true,
+"player-creation": true
+},
+"crafting_categories": {},
+"max_wire_distance": 9
+},
+"infinity-chest": {
+"type": "infinity-container",
+"tile_width": 1,
+"tile_height": 1,
+"collision_box": [
+-0.34765625,
+-0.34765625,
+0.34765625,
+0.34765625
+],
+"module_slots": 0,
+"flags": {
+"placeable-player": true,
+"player-creation": true
+},
+"crafting_categories": {},
+"max_wire_distance": 9
+},
+"infinity-pipe": {
+"type": "infinity-pipe",
+"tile_width": 1,
+"tile_height": 1,
+"collision_box": [
+-0.2890625,
+-0.2890625,
+0.2890625,
+0.2890625
+],
+"module_slots": 0,
+"flags": {
+"placeable-neutral": true,
+"player-creation": true
+},
+"fluidboxes": [
+{
+"production_type": "none",
+"connections": [
+{
+"position": [
+0,
+0
+],
+"direction": 0,
+"type": "normal",
+"flow": "input-output"
+},
+{
+"position": [
+0,
+0
+],
+"direction": 4,
+"type": "normal",
+"flow": "input-output"
+},
+{
+"position": [
+0,
+0
+],
+"direction": 8,
+"type": "normal",
+"flow": "input-output"
+},
+{
+"position": [
+0,
+0
+],
+"direction": 12,
+"type": "normal",
+"flow": "input-output"
+}
+]
+}
+],
+"crafting_categories": {},
+"max_wire_distance": 9
+},
+"pipe": {
+"type": "pipe",
+"tile_width": 1,
+"tile_height": 1,
+"collision_box": [
+-0.2890625,
+-0.2890625,
+0.2890625,
+0.2890625
+],
+"module_slots": 0,
+"flags": {
+"placeable-neutral": true,
+"player-creation": true
+},
+"fluidboxes": [
+{
+"production_type": "none",
+"connections": [
+{
+"position": [
+0,
+0
+],
+"direction": 0,
+"type": "normal",
+"flow": "input-output"
+},
+{
+"position": [
+0,
+0
+],
+"direction": 4,
+"type": "normal",
+"flow": "input-output"
+},
+{
+"position": [
+0,
+0
+],
+"direction": 8,
+"type": "normal",
+"flow": "input-output"
+},
+{
+"position": [
+0,
+0
+],
+"direction": 12,
+"type": "normal",
+"flow": "input-output"
+}
+]
+}
+],
+"crafting_categories": {},
+"max_wire_distance": 9
+},
+"pipe-to-ground": {
+"type": "pipe-to-ground",
+"tile_width": 1,
+"tile_height": 1,
+"collision_box": [
+-0.2890625,
+-0.2890625,
+0.2890625,
+0.19921875
+],
+"module_slots": 0,
+"flags": {
+"placeable-neutral": true,
+"player-creation": true
+},
+"fluidboxes": [
+{
+"production_type": "none",
+"connections": [
+{
+"position": [
+0,
+0
+],
+"direction": 0,
+"type": "normal",
+"flow": "input-output"
+},
+{
+"position": [
+0,
+0
+],
+"direction": 8,
+"type": "underground",
+"flow": "input-output",
+"max_underground_distance": 10
+}
+]
+}
+],
+"crafting_categories": {},
+"max_wire_distance": 9,
+"max_underground_distance": 10
+},
+"substation": {
+"type": "electric-pole",
+"tile_width": 2,
+"tile_height": 2,
+"collision_box": [
+-0.69921875,
+-0.69921875,
+0.69921875,
+0.69921875
+],
+"module_slots": 0,
+"flags": {
+"placeable-neutral": true,
+"player-creation": true
+},
+"crafting_categories": {},
+"supply_area_distance": 9,
+"max_wire_distance": 18
+},
+"roboport": {
+"type": "roboport",
+"tile_width": 4,
+"tile_height": 4,
+"collision_box": [
+-1.69921875,
+-1.69921875,
+1.69921875,
+1.69921875
+],
+"module_slots": 0,
+"flags": {
+"placeable-player": true,
+"player-creation": true
+},
+"crafting_categories": {},
+"max_wire_distance": 9
+},
+"turbo-splitter": {
+"type": "splitter",
+"tile_width": 2,
+"tile_height": 1,
+"collision_box": [
+-0.8984375,
+-0.3984375,
+0.8984375,
+0.3984375
+],
+"module_slots": 0,
+"flags": {
+"placeable-neutral": true,
+"player-creation": true
+},
+"crafting_categories": {},
+"max_wire_distance": 9,
+"belt_speed": 0.125
+},
+"turbo-transport-belt": {
+"type": "transport-belt",
+"tile_width": 1,
+"tile_height": 1,
+"collision_box": [
+-0.3984375,
+-0.3984375,
+0.3984375,
+0.3984375
+],
+"module_slots": 0,
+"flags": {
+"placeable-neutral": true,
+"player-creation": true
+},
+"crafting_categories": {},
+"max_wire_distance": 9,
+"belt_speed": 0.125
+},
+"turbo-underground-belt": {
+"type": "underground-belt",
+"tile_width": 1,
+"tile_height": 1,
+"collision_box": [
+-0.3984375,
+-0.3984375,
+0.3984375,
+0.3984375
+],
+"module_slots": 0,
+"flags": {
+"placeable-neutral": true,
+"player-creation": true
+},
+"crafting_categories": {},
+"max_wire_distance": 0,
+"belt_speed": 0.125,
+"max_underground_distance": 11
+}
+},
+"recipes": {
+"casting-low-density-structure": {
+"categories": [
+"metallurgy"
+],
+"energy": 15,
+"ingredients": [
+{
+"type": "item",
+"name": "plastic-bar",
+"amount": 5
+},
+{
+"type": "fluid",
+"name": "molten-iron",
+"amount": 80
+},
+{
+"type": "fluid",
+"name": "molten-copper",
+"amount": 250
+}
+],
+"products": [
+{
+"type": "item",
+"name": "low-density-structure",
+"amount": 1
+}
+],
+"maximum_productivity": 3,
+"hidden": false
+},
+"low-density-structure-recycling": {
+"categories": [
+"recycling"
+],
+"energy": 0.9375,
+"ingredients": [
+{
+"type": "item",
+"name": "low-density-structure",
+"amount": 1
+}
+],
+"products": [
+{
+"type": "item",
+"name": "steel-plate",
+"amount": 0,
+"extra_count_fraction": 0.5
+},
+{
+"type": "item",
+"name": "copper-plate",
+"amount": 5
+},
+{
+"type": "item",
+"name": "plastic-bar",
+"amount": 1,
+"extra_count_fraction": 0.25
+}
+],
+"maximum_productivity": 3,
+"hidden": true
+},
+"copper-plate-recycling": {
+"categories": [
+"recycling"
+],
+"energy": 0.2,
+"ingredients": [
+{
+"type": "item",
+"name": "copper-plate",
+"amount": 1
+}
+],
+"products": [
+{
+"type": "item",
+"name": "copper-plate",
+"amount": 1
+}
+],
+"maximum_productivity": 3,
+"hidden": true
+},
+"steel-plate-recycling": {
+"categories": [
+"recycling"
+],
+"energy": 1,
+"ingredients": [
+{
+"type": "item",
+"name": "steel-plate",
+"amount": 1
+}
+],
+"products": [
+{
+"type": "item",
+"name": "steel-plate",
+"amount": 1
+}
+],
+"maximum_productivity": 3,
+"hidden": true
+}
+},
+"items": {
+"speed-module": {
+"type": "module",
+"stack_size": 50,
+"module_effects": {
+"consumption": 0.5,
+"speed": 0.2,
+"quality": -0.01
+},
+"category": "speed",
+"tier": 1
+},
+"speed-module-2": {
+"type": "module",
+"stack_size": 50,
+"module_effects": {
+"consumption": 0.6,
+"speed": 0.3,
+"quality": -0.015
+},
+"category": "speed",
+"tier": 2
+},
+"speed-module-3": {
+"type": "module",
+"stack_size": 50,
+"module_effects": {
+"consumption": 0.7,
+"speed": 0.5,
+"quality": -0.025
+},
+"category": "speed",
+"tier": 3
+},
+"efficiency-module": {
+"type": "module",
+"stack_size": 50,
+"module_effects": {
+"consumption": -0.3
+},
+"category": "efficiency",
+"tier": 1
+},
+"efficiency-module-2": {
+"type": "module",
+"stack_size": 50,
+"module_effects": {
+"consumption": -0.4
+},
+"category": "efficiency",
+"tier": 2
+},
+"efficiency-module-3": {
+"type": "module",
+"stack_size": 50,
+"module_effects": {
+"consumption": -0.5
+},
+"category": "efficiency",
+"tier": 3
+},
+"productivity-module": {
+"type": "module",
+"stack_size": 50,
+"module_effects": {
+"consumption": 0.4,
+"speed": -0.05,
+"productivity": 0.04,
+"pollution": 0.05
+},
+"category": "productivity",
+"tier": 1
+},
+"productivity-module-2": {
+"type": "module",
+"stack_size": 50,
+"module_effects": {
+"consumption": 0.6,
+"speed": -0.1,
+"productivity": 0.06,
+"pollution": 0.07
+},
+"category": "productivity",
+"tier": 2
+},
+"productivity-module-3": {
+"type": "module",
+"stack_size": 50,
+"module_effects": {
+"consumption": 0.8,
+"speed": -0.15,
+"productivity": 0.1,
+"pollution": 0.1
+},
+"category": "productivity",
+"tier": 3
+},
+"quality-module": {
+"type": "module",
+"stack_size": 50,
+"module_effects": {
+"speed": -0.05,
+"quality": 0.01
+},
+"category": "quality",
+"tier": 1
+},
+"quality-module-2": {
+"type": "module",
+"stack_size": 50,
+"module_effects": {
+"speed": -0.05,
+"quality": 0.02
+},
+"category": "quality",
+"tier": 2
+},
+"quality-module-3": {
+"type": "module",
+"stack_size": 50,
+"module_effects": {
+"speed": -0.05,
+"quality": 0.025
+},
+"category": "quality",
+"tier": 3
+}
+},
+"qualities": {
+"normal": {
+"level": 0,
+"next": "uncommon",
+"next_probability": 1,
+"hidden": false
+},
+"uncommon": {
+"level": 1,
+"next": "rare",
+"next_probability": 1,
+"hidden": false
+},
+"rare": {
+"level": 2,
+"next": "epic",
+"next_probability": 1,
+"hidden": false
+},
+"epic": {
+"level": 3,
+"next": "legendary",
+"next_probability": 1,
+"hidden": false
+},
+"legendary": {
+"level": 5,
+"next_probability": 0,
+"hidden": false
+},
+"quality-unknown": {
+"level": 0,
+"next_probability": 0,
+"hidden": true
+}
+},
+"fluids": {},
+"factorio_version": "2.1.23"
+}
