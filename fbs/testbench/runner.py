@@ -106,6 +106,10 @@ def run(cfg: TestConfig, headless: Headless | None = None, keep_workdir: bool = 
         if not report_path.exists():
             raise HeadlessError("testbench produced no report. Log tail:\n" + log[-3000:])
         raw = json.loads(report_path.read_text(encoding="utf-8"))
+        # Lua serialises empty tables as {}; normalise list-like fields
+        for key in ("problems", "samples", "crafters"):
+            if isinstance(raw.get(key), dict):
+                raw[key] = list(raw[key].values())
         if not raw.get("finished"):
             raw.setdefault("problems", []).append("run aborted early; log tail: " + log[-800:])
         raw["wall_seconds"] = round(seconds, 1)

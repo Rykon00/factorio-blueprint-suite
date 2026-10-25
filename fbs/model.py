@@ -92,6 +92,7 @@ class Blueprint:
         self.icons: list[dict[str, Any]] = []
         self.tiles: list[dict[str, Any]] = []
         self.meta: dict[str, Any] = {}
+        self.extra: dict[str, Any] = {}  # extra top-level blueprint fields (e.g. snapping)
 
     # -- placement --------------------------------------------------------
     def place(self, name: str, x: int, y: int, direction: int | str = Direction.NORTH, *, tag: str | None = None,
@@ -261,6 +262,7 @@ class Blueprint:
         if self.tiles:
             bp["tiles"] = self.tiles
         bp["icons"] = self.icons or [{"signal": {"name": self.entities[0].name}, "index": 1}] if self.entities else []
+        bp.update(self.extra)
         return {"blueprint": bp}
 
     def to_string(self, version: int | None = None) -> str:
@@ -292,4 +294,5 @@ class Blueprint:
                 out.wires.append([mapping[w[0]], w[1], mapping[w[2]], w[3]])
         out.icons = list(self.icons)
         out.meta = dict(self.meta)
+        out.extra = dict(self.extra)
         return out

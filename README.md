@@ -108,6 +108,41 @@ Parameters (`-p key=value`): `normal_foundries`, `foundry_modules`, `recycler_mo
 Ports on the left edge: plastic input chests at x=2, y=12..13 (an inserter picks up from x=0), molten iron
 at (0, 8), molten copper at (0, 10).
 
+### `em-upcycler`
+
+Normal iron + copper plates in (requested from the logistic network); legendary iron and copper plates out
+(filtered storage chests). Built for the City Block 2.0 grid (see below).
+
+Why this loop: expected legendary output per normal input plate with an endless loop
+(rare Q3 / legendary Q3 modules):
+
+| loop | legendary per input plate |
+|---|---|
+| ore self-recycling | 0.016 % / 0.04 % |
+| gears in assembling machines | 0.12 % / 0.32 % |
+| **cables / green circuits in the electromagnetic plant** | **0.48 % / 1.3 %** |
+
+The electromagnetic plant has 50 % base productivity and 5 module slots. Factorio 2.1 removed quality
+modules from asteroid reprocessing, and the LDS shuffle yields no iron, so iron goes through green circuits:
+
+* **iron cell** (9x12): copper-cable plant with productivity + speed modules (every cable keeps the tier's
+  quality) -> circuit plant with quality modules -> recycler -> chest; filter inserters send iron to an
+  active provider and cables to a second recycler (-> copper).
+* **copper cell** (4x12): cable plant with quality modules -> recycler -> active provider.
+* the planner sizes cells per tier so no non-legendary plates pile up (upper-tier iron needs upper-tier
+  copper for its cables, so copper cells run on every tier).
+
+Default (3 normal iron cells, rare Q3) fits one grid cell: iron cells `[3,1,1,1]`, copper cells
+`[9,2,1,1]`, ~6.7 iron/s + ~26.6 copper/s in. Testbench (vanilla + Space Age, 40 min): **128 legendary iron
+and 318 legendary copper per hour**, normal circuit plants 100 % busy, no growing intermediate stock.
+
+## Grid: City Block 2.0
+
+`fbs.grid` holds the grid blueprint (50x50 cells, absolute snapping, roboport + 4 medium + 4 big poles on
+every corner). Grid designs build inside the cell interior (tiles 3..46), include the corner nodes of the
+cells they use (tag `grid`) and carry the same snapping, so the blueprint lands exactly on an existing grid.
+`fbs.power.auto_power` fills the interior with substations (greedy set cover) and wires them to the grid.
+
 ## Writing a design
 
 ```python

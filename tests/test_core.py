@@ -111,3 +111,44 @@ def test_find_factorio_uses_dot_factorio(tmp_path, monkeypatch):
     monkeypatch.chdir(tmp_path)
     monkeypatch.delenv("FBS_FACTORIO", raising=False)
     assert find_factorio() == binary.resolve()
+
+
+def test_grid_snapping_and_corner_nodes(protos):
+    from fbs.grid import Cell, add_grid, snap_to_grid
+    bp = Blueprint(protos)
+    ents = add_grid(bp, [Cell(0, 0), Cell(1, 0)])
+    # two cells share one corner column: 6 roboports, not 8
+    assert sum(1 for e in ents if e.name == "roboport") == 6
+    snap_to_grid(bp)
+    d = bp.to_dict()["blueprint"]
+    assert d["snap-to-grid"] == {"x": 50, "y": 50} and d["absolute-snapping"] is True
+    assert d["position-relative-to-grid"] == {"x": 25, "y": 25}
+
+
+def test_auto_power_covers_everything(protos):
+    from fbs.power import auto_power
+    bp = Blueprint(protos)
+    anchor = bp.place("medium-electric-pole", 0, 0)
+    for i in range(6):
+        bp.place("electromagnetic-plant", 4 + i * 6, 4)
+    poles = auto_power(bp, (2, 2, 45, 20), connect_to=[anchor])
+    assert poles
+    # every placed pole is wired into the tree
+    wired = {w[0] for w in bp.wires} | {w[2] for w in bp.wires}
+    assert all(p.number in wired for p in poles)
+
+
+def test_em_upcycler_plan_and_layout(protos):
+    from fbs.designs import em_upcycler as U
+    pl = U.plan(protos, U.Params(normal_iron_cells=2))
+    assert pl.iron_cells[0] == 2 and all(n >= 1 for n in pl.iron_cells)
+    assert pl.legendary_per_hour["iron-plate"] > 0 and pl.legendary_per_hour["copper-plate"] > 0
+    bp, _ = U.build(protos, U.Params(normal_iron_cells=2))
+    assert bp.meta["grid_cells"] == [(0, 0)]
+    prod = bp.without_tags("test")
+    assert not any(e.name.startswith("infinity") for e in prod.entities)
+    # everything except the grid nodes stays inside the cell interior 3..46
+    for e in prod.entities:
+        if e.tag == "grid":
+            continue
+        assert all(3 <= t[0] <= 46 and 3 <= t[1] <= 46 for t in e.tiles), (e.name, e.position)

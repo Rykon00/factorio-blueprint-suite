@@ -554,6 +554,179 @@
 "max_wire_distance": 0,
 "belt_speed": 0.125,
 "max_underground_distance": 11
+},
+"electromagnetic-plant": {
+"type": "assembling-machine",
+"tile_width": 4,
+"tile_height": 4,
+"collision_box": [
+-1.69921875,
+-1.69921875,
+1.69921875,
+1.69921875
+],
+"module_slots": 5,
+"flags": {
+"placeable-neutral": true,
+"placeable-player": true,
+"player-creation": true
+},
+"fluidboxes": [
+{
+"production_type": "input",
+"connections": [
+{
+"position": [
+-1.5,
+0.5
+],
+"direction": 12,
+"type": "normal",
+"flow": "input-output"
+}
+]
+},
+{
+"production_type": "input",
+"connections": [
+{
+"position": [
+1.5,
+-0.5
+],
+"direction": 4,
+"type": "normal",
+"flow": "input-output"
+}
+]
+},
+{
+"production_type": "output",
+"connections": [
+{
+"position": [
+0.5,
+1.5
+],
+"direction": 8,
+"type": "normal",
+"flow": "input-output"
+}
+]
+},
+{
+"production_type": "output",
+"connections": [
+{
+"position": [
+-0.5,
+-1.5
+],
+"direction": 0,
+"type": "normal",
+"flow": "input-output"
+}
+]
+}
+],
+"crafting_speed": 2,
+"crafting_categories": [
+"electromagnetics",
+"parameters"
+],
+"max_wire_distance": 9,
+"effect_receiver": {
+"base_effect": {
+"productivity": 0.5
+},
+"uses_module_effects": true,
+"uses_beacon_effects": true,
+"uses_surface_effects": true,
+"uses_local_effects": true,
+"consumption_limits": {
+"low": -0.8,
+"high": 1000
+},
+"speed_limits": {
+"low": -0.8,
+"high": 1000
+},
+"productivity_limits": {
+"low": -0.8,
+"high": 1000
+},
+"pollution_limits": {
+"low": -0.8,
+"high": 1000
+},
+"quality_limits": {
+"low": 0,
+"high": 1000
+}
+},
+"allowed_effects": {
+"consumption": true,
+"speed": true,
+"productivity": true,
+"pollution": true,
+"quality": true
+}
+},
+"steel-chest": {
+"type": "container",
+"tile_width": 1,
+"tile_height": 1,
+"collision_box": [
+-0.34765625,
+-0.34765625,
+0.34765625,
+0.34765625
+],
+"module_slots": 0,
+"flags": {
+"placeable-neutral": true,
+"player-creation": true
+},
+"crafting_categories": {},
+"max_wire_distance": 9
+},
+"medium-electric-pole": {
+"type": "electric-pole",
+"tile_width": 1,
+"tile_height": 1,
+"collision_box": [
+-0.1484375,
+-0.1484375,
+0.1484375,
+0.1484375
+],
+"module_slots": 0,
+"flags": {
+"placeable-neutral": true,
+"player-creation": true
+},
+"crafting_categories": {},
+"supply_area_distance": 3.5,
+"max_wire_distance": 9
+},
+"big-electric-pole": {
+"type": "electric-pole",
+"tile_width": 2,
+"tile_height": 2,
+"collision_box": [
+-0.6484375,
+-0.6484375,
+0.6484375,
+0.6484375
+],
+"module_slots": 0,
+"flags": {
+"placeable-neutral": true,
+"player-creation": true
+},
+"crafting_categories": {},
+"supply_area_distance": 2,
+"max_wire_distance": 32
 }
 },
 "recipes": {
@@ -662,6 +835,109 @@
 "type": "item",
 "name": "steel-plate",
 "amount": 1
+}
+],
+"maximum_productivity": 3,
+"hidden": true
+},
+"copper-cable": {
+"categories": [
+"crafting",
+"electromagnetics"
+],
+"energy": 0.5,
+"ingredients": [
+{
+"type": "item",
+"name": "copper-plate",
+"amount": 1
+}
+],
+"products": [
+{
+"type": "item",
+"name": "copper-cable",
+"amount": 2
+}
+],
+"maximum_productivity": 3,
+"hidden": false
+},
+"electronic-circuit": {
+"categories": [
+"crafting",
+"electromagnetics"
+],
+"energy": 0.5,
+"ingredients": [
+{
+"type": "item",
+"name": "iron-plate",
+"amount": 1
+},
+{
+"type": "item",
+"name": "copper-cable",
+"amount": 3
+}
+],
+"products": [
+{
+"type": "item",
+"name": "electronic-circuit",
+"amount": 1
+}
+],
+"maximum_productivity": 3,
+"hidden": false
+},
+"copper-cable-recycling": {
+"categories": [
+"recycling"
+],
+"energy": 0.015625,
+"ingredients": [
+{
+"type": "item",
+"name": "copper-cable",
+"amount": 1
+}
+],
+"products": [
+{
+"type": "item",
+"name": "copper-plate",
+"amount": 0,
+"extra_count_fraction": 0.125
+}
+],
+"maximum_productivity": 3,
+"hidden": true
+},
+"electronic-circuit-recycling": {
+"categories": [
+"recycling"
+],
+"energy": 0.03125,
+"ingredients": [
+{
+"type": "item",
+"name": "electronic-circuit",
+"amount": 1
+}
+],
+"products": [
+{
+"type": "item",
+"name": "iron-plate",
+"amount": 0,
+"extra_count_fraction": 0.25
+},
+{
+"type": "item",
+"name": "copper-cable",
+"amount": 0,
+"extra_count_fraction": 0.75
 }
 ],
 "maximum_productivity": 3,

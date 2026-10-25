@@ -1,0 +1,533 @@
+{
+ "problems": [],
+ "build": {
+  "expected_entities": 241,
+  "built": 241,
+  "failed": 0,
+  "offset": [
+   -25,
+   -25
+  ],
+  "infinity_entities_configured": 6,
+  "electric_networks": 1
+ },
+ "finished": true,
+ "wall_seconds": 23.4,
+ "factorio_version": "2.1.23",
+ "minutes_simulated": 40.0,
+ "window_minutes": 30.0,
+ "produced_per_hour": {
+  "copper-cable@epic": 7904.0,
+  "copper-cable@legendary": 1200.0,
+  "copper-cable@normal": 351822.0,
+  "copper-cable@rare": 27352.0,
+  "copper-cable@uncommon": 102292.0,
+  "copper-plate@epic": 1376.0,
+  "copper-plate@legendary": 362.0,
+  "copper-plate@normal": 26830.0,
+  "copper-plate@rare": 4448.0,
+  "copper-plate@uncommon": 13736.0,
+  "electronic-circuit@epic": 1088.0,
+  "electronic-circuit@legendary": 162.0,
+  "electronic-circuit@normal": 38500.0,
+  "electronic-circuit@rare": 3734.0,
+  "electronic-circuit@uncommon": 13662.0,
+  "iron-plate@epic": 414.0,
+  "iron-plate@legendary": 86.0,
+  "iron-plate@normal": 8184.0,
+  "iron-plate@rare": 1424.0,
+  "iron-plate@uncommon": 4188.0
+ },
+ "consumed_per_hour": {
+  "copper-cable@epic": 7876.0,
+  "copper-cable@legendary": 1200.0,
+  "copper-cable@normal": 351834.0,
+  "copper-cable@rare": 27322.0,
+  "copper-cable@uncommon": 102362.0,
+  "copper-plate@epic": 1366.0,
+  "copper-plate@normal": 121648.0,
+  "copper-plate@rare": 4440.0,
+  "copper-plate@uncommon": 13722.0,
+  "electronic-circuit@epic": 1088.0,
+  "electronic-circuit@legendary": 162.0,
+  "electronic-circuit@normal": 38496.0,
+  "electronic-circuit@rare": 3736.0,
+  "electronic-circuit@uncommon": 13662.0,
+  "iron-plate@epic": 416.0,
+  "iron-plate@normal": 32078.0,
+  "iron-plate@rare": 1420.0,
+  "iron-plate@uncommon": 4184.0
+ },
+ "stock": {
+  "copper-cable@normal": {
+   "start": 2,
+   "end": 2,
+   "per_hour": 0.0
+  },
+  "copper-cable@uncommon": {
+   "start": 2,
+   "end": 0,
+   "per_hour": -4.0
+  },
+  "copper-plate@epic": {
+   "start": 31,
+   "end": 36,
+   "per_hour": 10.0
+  },
+  "copper-plate@legendary": {
+   "start": 43,
+   "end": 225,
+   "per_hour": 364.0
+  },
+  "copper-plate@normal": {
+   "start": 14649,
+   "end": 14630,
+   "per_hour": -38.0
+  },
+  "copper-plate@rare": {
+   "start": 29,
+   "end": 34,
+   "per_hour": 10.0
+  },
+  "copper-plate@uncommon": {
+   "start": 28,
+   "end": 27,
+   "per_hour": -2.0
+  },
+  "iron-plate@legendary": {
+   "start": 21,
+   "end": 64,
+   "per_hour": 86.0
+  },
+  "iron-plate@normal": {
+   "start": 14451,
+   "end": 14420,
+   "per_hour": -62.0
+  },
+  "iron-plate@rare": {
+   "start": 1,
+   "end": 0,
+   "per_hour": -2.0
+  },
+  "iron-plate@uncommon": {
+   "start": 4,
+   "end": 5,
+   "per_hour": 2.0
+  }
+ },
+ "full_containers_end": {},
+ "items_on_ground_end": 0,
+ "utilisation": {
+  "electromagnetic-plant|copper-cable|epic": {
+   "working": 0.016,
+   "stalls": {
+    "output blocked": 0.5,
+    "missing item input": 0.484
+   }
+  },
+  "electromagnetic-plant|copper-cable|normal": {
+   "working": 0.911,
+   "stalls": {
+    "output blocked": 0.081,
+    "missing item input": 0.008
+   }
+  },
+  "electromagnetic-plant|copper-cable|rare": {
+   "working": 0.226,
+   "stalls": {
+    "output blocked": 0.435,
+    "missing item input": 0.339
+   }
+  },
+  "electromagnetic-plant|copper-cable|uncommon": {
+   "working": 0.398,
+   "stalls": {
+    "missing item input": 0.398,
+    "output blocked": 0.204
+   }
+  },
+  "electromagnetic-plant|electronic-circuit|epic": {
+   "working": 0.032,
+   "stalls": {
+    "missing item input": 0.968
+   }
+  },
+  "electromagnetic-plant|electronic-circuit|normal": {
+   "working": 1.0,
+   "stalls": {}
+  },
+  "electromagnetic-plant|electronic-circuit|rare": {
+   "working": 0.161,
+   "stalls": {
+    "missing item input": 0.839
+   }
+  },
+  "electromagnetic-plant|electronic-circuit|uncommon": {
+   "working": 0.355,
+   "stalls": {
+    "missing item input": 0.645
+   }
+  },
+  "recycler|-|": {
+   "working": 0.178,
+   "stalls": {
+    "no input": 0.822
+   }
+  }
+ },
+ "mostly_stalled_machines": [
+  {
+   "name": "recycler",
+   "position": [
+    -21,
+    15
+   ],
+   "recipe": null,
+   "recipe_quality": null,
+   "working": 0.0,
+   "main_stall": "no input"
+  },
+  {
+   "name": "recycler",
+   "position": [
+    -19,
+    -11
+   ],
+   "recipe": null,
+   "recipe_quality": null,
+   "working": 0.07,
+   "main_stall": "no input"
+  },
+  {
+   "name": "recycler",
+   "position": [
+    -19,
+    3
+   ],
+   "recipe": null,
+   "recipe_quality": null,
+   "working": 0.02,
+   "main_stall": "no input"
+  },
+  {
+   "name": "recycler",
+   "position": [
+    -15,
+    0
+   ],
+   "recipe": null,
+   "recipe_quality": null,
+   "working": 0.07,
+   "main_stall": "no input"
+  },
+  {
+   "name": "recycler",
+   "position": [
+    -11,
+    15
+   ],
+   "recipe": null,
+   "recipe_quality": null,
+   "working": 0.0,
+   "main_stall": "no input"
+  },
+  {
+   "name": "recycler",
+   "position": [
+    -9,
+    -11
+   ],
+   "recipe": null,
+   "recipe_quality": null,
+   "working": 0.12,
+   "main_stall": "no input"
+  },
+  {
+   "name": "recycler",
+   "position": [
+    -9,
+    3
+   ],
+   "recipe": null,
+   "recipe_quality": null,
+   "working": 0.0,
+   "main_stall": "no input"
+  },
+  {
+   "name": "recycler",
+   "position": [
+    -6,
+    15
+   ],
+   "recipe": null,
+   "recipe_quality": null,
+   "working": 0.12,
+   "main_stall": "no input"
+  },
+  {
+   "name": "recycler",
+   "position": [
+    -5,
+    -14
+   ],
+   "recipe": null,
+   "recipe_quality": null,
+   "working": 0.0,
+   "main_stall": "no input"
+  },
+  {
+   "name": "recycler",
+   "position": [
+    -5,
+    0
+   ],
+   "recipe": null,
+   "recipe_quality": null,
+   "working": 0.0,
+   "main_stall": "no input"
+  },
+  {
+   "name": "recycler",
+   "position": [
+    -1,
+    1
+   ],
+   "recipe": null,
+   "recipe_quality": null,
+   "working": 0.02,
+   "main_stall": "no input"
+  },
+  {
+   "name": "recycler",
+   "position": [
+    -1,
+    15
+   ],
+   "recipe": null,
+   "recipe_quality": null,
+   "working": 0.12,
+   "main_stall": "no input"
+  },
+  {
+   "name": "recycler",
+   "position": [
+    1,
+    -11
+   ],
+   "recipe": null,
+   "recipe_quality": null,
+   "working": 0.0,
+   "main_stall": "no input"
+  },
+  {
+   "name": "recycler",
+   "position": [
+    4,
+    15
+   ],
+   "recipe": null,
+   "recipe_quality": null,
+   "working": 0.12,
+   "main_stall": "no input"
+  },
+  {
+   "name": "recycler",
+   "position": [
+    5,
+    -14
+   ],
+   "recipe": null,
+   "recipe_quality": null,
+   "working": 0.12,
+   "main_stall": "no input"
+  },
+  {
+   "name": "recycler",
+   "position": [
+    9,
+    1
+   ],
+   "recipe": null,
+   "recipe_quality": null,
+   "working": 0.0,
+   "main_stall": "no input"
+  },
+  {
+   "name": "recycler",
+   "position": [
+    9,
+    15
+   ],
+   "recipe": null,
+   "recipe_quality": null,
+   "working": 0.05,
+   "main_stall": "no input"
+  },
+  {
+   "name": "recycler",
+   "position": [
+    11,
+    -11
+   ],
+   "recipe": null,
+   "recipe_quality": null,
+   "working": 0.05,
+   "main_stall": "no input"
+  },
+  {
+   "name": "recycler",
+   "position": [
+    14,
+    1
+   ],
+   "recipe": null,
+   "recipe_quality": null,
+   "working": 0.0,
+   "main_stall": "no input"
+  },
+  {
+   "name": "recycler",
+   "position": [
+    14,
+    15
+   ],
+   "recipe": null,
+   "recipe_quality": null,
+   "working": 0.02,
+   "main_stall": "no input"
+  },
+  {
+   "name": "recycler",
+   "position": [
+    15,
+    -14
+   ],
+   "recipe": null,
+   "recipe_quality": null,
+   "working": 0.24,
+   "main_stall": "no input"
+  },
+  {
+   "name": "recycler",
+   "position": [
+    19,
+    1
+   ],
+   "recipe": null,
+   "recipe_quality": null,
+   "working": 0.12,
+   "main_stall": "no input"
+  },
+  {
+   "name": "electromagnetic-plant",
+   "position": [
+    -20,
+    -4
+   ],
+   "recipe": "copper-cable",
+   "recipe_quality": "rare",
+   "working": 0.12,
+   "main_stall": "output blocked"
+  },
+  {
+   "name": "electromagnetic-plant",
+   "position": [
+    -10,
+    -4
+   ],
+   "recipe": "copper-cable",
+   "recipe_quality": "epic",
+   "working": 0.0,
+   "main_stall": "output blocked"
+  },
+  {
+   "name": "electromagnetic-plant",
+   "position": [
+    0,
+    10
+   ],
+   "recipe": "copper-cable",
+   "recipe_quality": "uncommon",
+   "working": 0.37,
+   "main_stall": "missing item input"
+  },
+  {
+   "name": "electromagnetic-plant",
+   "position": [
+    5,
+    10
+   ],
+   "recipe": "copper-cable",
+   "recipe_quality": "uncommon",
+   "working": 0.39,
+   "main_stall": "missing item input"
+  },
+  {
+   "name": "electromagnetic-plant",
+   "position": [
+    10,
+    -18
+   ],
+   "recipe": "copper-cable",
+   "recipe_quality": "uncommon",
+   "working": 0.29,
+   "main_stall": "output blocked"
+  },
+  {
+   "name": "electromagnetic-plant",
+   "position": [
+    10,
+    10
+   ],
+   "recipe": "copper-cable",
+   "recipe_quality": "rare",
+   "working": 0.37,
+   "main_stall": "missing item input"
+  },
+  {
+   "name": "electromagnetic-plant",
+   "position": [
+    15,
+    10
+   ],
+   "recipe": "copper-cable",
+   "recipe_quality": "epic",
+   "working": 0.02,
+   "main_stall": "missing item input"
+  },
+  {
+   "name": "electromagnetic-plant",
+   "position": [
+    -15,
+    -4
+   ],
+   "recipe": "electronic-circuit",
+   "recipe_quality": "rare",
+   "working": 0.15,
+   "main_stall": "missing item input"
+  },
+  {
+   "name": "electromagnetic-plant",
+   "position": [
+    -5,
+    -4
+   ],
+   "recipe": "electronic-circuit",
+   "recipe_quality": "epic",
+   "working": 0.02,
+   "main_stall": "missing item input"
+  },
+  {
+   "name": "electromagnetic-plant",
+   "position": [
+    15,
+    -18
+   ],
+   "recipe": "electronic-circuit",
+   "recipe_quality": "uncommon",
+   "working": 0.34,
+   "main_stall": "missing item input"
+  }
+ ],
+ "warnings": []
+}

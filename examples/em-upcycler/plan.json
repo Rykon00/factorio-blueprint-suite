@@ -1,0 +1,59 @@
+{
+ "plan": {
+  "iron_cells": [
+   3,
+   1,
+   1,
+   1
+  ],
+  "copper_cells": [
+   9,
+   2,
+   1,
+   1
+  ],
+  "iron_input_per_s": 6.732,
+  "copper_input_per_s": 26.587,
+  "legendary_per_hour": {
+   "iron-plate": 115.4,
+   "copper-plate": 363.9
+  },
+  "utilisation": {
+   "iron": [
+    1.0,
+    0.401,
+    0.133,
+    0.04
+   ],
+   "copper": [
+    1.0,
+    0.501,
+    0.321,
+    0.092
+   ]
+  },
+  "notes": []
+ },
+ "params": {
+  "iron_cells": null,
+  "copper_cells": null,
+  "normal_iron_cells": 3,
+  "em_plant": "electromagnetic-plant",
+  "recycler": "recycler",
+  "inserter": "bulk-inserter",
+  "em_modules": "quality-module-3@rare",
+  "cable_modules": "productivity-module-3,productivity-module-3,productivity-module-3,productivity-module-3,speed-module-3",
+  "recycler_modules": "quality-module-3@rare",
+  "em_productivity": 0.5,
+  "request_amount": 40,
+  "grid_cells": 0,
+  "buffer_storage": 6,
+  "label": "EM upcycler (fbs)"
+ },
+ "grid_cells": [
+  [
+   0,
+   0
+  ]
+ ]
+}
