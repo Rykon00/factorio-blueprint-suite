@@ -19,7 +19,7 @@ measuring what came out.
 | `fbs.protos` | prototype data (sizes, fluid connections, recipes, module effects, qualities) dumped from the game, **including your mods** |
 | `fbs.render` | top-down PNG preview (footprints, quality colours, flow arrows) |
 | `fbs.testbench` | headless runner: build -> power -> robots -> run N minutes -> report |
-| `fbs.designs` | parametric designs (`lds-shuffle` so far) |
+| `fbs.designs` | parametric designs: `lds-shuffle`, `em-upcycler`, `brick-upcycler`, `steel-upcycler`, `raw-upcycler`, `self-recycler` |
 
 ## Setup
 
