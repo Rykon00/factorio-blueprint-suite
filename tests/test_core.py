@@ -152,3 +152,20 @@ def test_em_upcycler_plan_and_layout(protos):
         if e.tag == "grid":
             continue
         assert all(3 <= t[0] <= 46 and 3 <= t[1] <= 46 for t in e.tiles), (e.name, e.position)
+
+
+@pytest.mark.parametrize("design", ["brick-upcycler", "raw-upcycler", "steel-upcycler", "self-recycler", "em-upcycler"])
+def test_grid_designs_build_inside_their_cells(design):
+    from fbs.designs import DESIGNS
+    full = Prototypes.load()  # bundled vanilla + Space Age dump
+    bp, _ = DESIGNS[design].build(full)
+    prod = bp.without_tags("test")
+    cells = bp.meta["grid_cells"]
+    assert prod.extra.get("absolute-snapping") is True
+    for e in prod.entities:
+        if e.tag == "grid":
+            continue
+        ok = any(cx * 50 + 3 <= t[0] <= cx * 50 + 48 and cy * 50 + 3 <= t[1] <= cy * 50 + 46
+                 for t in e.tiles for cx, cy in cells)
+        assert ok, (design, e.name, e.position)
+    assert codec.decode(prod.to_string())["blueprint"]["entities"]

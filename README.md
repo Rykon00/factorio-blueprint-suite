@@ -136,6 +136,37 @@ Default (3 normal iron cells, rare Q3) fits one grid cell: iron cells `[3,1,1,1]
 `[9,2,1,1]`, ~6.7 iron/s + ~26.6 copper/s in. Testbench (vanilla + Space Age, 40 min): **128 legendary iron
 and 318 legendary copper per hour**, normal circuit plants 100 % busy, no growing intermediate stock.
 
+### Other base materials
+
+A search over every recipe (rare Q3, legendary per input item, endless loop) picks the loop per material:
+
+| material | loop | legendary per input | design |
+|---|---|---|---|
+| stone bricks | `concrete-from-molten-iron` (foundry) <-> recycler | 0.36 % | `brick-upcycler` |
+| steel | LDS shuffle (by-product; the EM pole loops need same-quality sticks and cables) | LDS | `steel-upcycler` |
+| stone | stone furnace (assembler) <-> recycler | 0.12 % | `raw-upcycler` |
+| coal (+ iron) | grenade (assembler) <-> recycler, coal and iron come back together | 0.12 % | `raw-upcycler` |
+| sulfur, calcite, ores, ... | only self-recycling | 0.016 % | `self-recycler`, `raw-upcycler` |
+
+Testbench results (vanilla + Space Age, one grid cell each, 40-60 min):
+
+* `brick-upcycler`: 16 foundries `[12,2,1,1]`, ~14 bricks/s in, molten iron + water mains -> **~210-270
+  legendary bricks/h** plus ~76 legendary iron ore/h (the iron ore by-product goes through a recycler pair).
+* `steel-upcycler`: LDS units `[12,2,1,1]`, ~9 plastic/s, molten iron + copper -> **~50-65 legendary steel,
+  ~140-175 plastic, ~600-700 copper per hour**. Non-legendary copper (~24/s) goes to the logistic network,
+  which is what `em-upcycler` requests.
+* `raw-upcycler`: stone-furnace row (4 normal assemblers, belt-fed) + grenade row (8, belt-fed coal, iron by
+  robot) + recycler pairs -> **~116 stone, ~40 coal, ~23 iron, ~7 sulfur, ~7 calcite legendary per hour**.
+
+Lessons built into the designs:
+
+* A requester caps the items in flight at its request size: size requests to ~30 s of consumption.
+* High-volume raw input by robots saturates even 400 robots; the normal tier of `raw-upcycler` is fed by a
+  belt (cell tile x = 47, heading west) and only the 25 % that comes back plus the upper tiers use robots.
+* Never put two ingredients with different consumption ratios on one belt (iron clogged the grenade belt).
+* `common.recycler_pair`: two recyclers hand items back and forth without robots and pull legendary items
+  out with filter inserters.
+
 ## Grid: City Block 2.0
 
 `fbs.grid` holds the grid blueprint (50x50 cells, absolute snapping, roboport + 4 medium + 4 big poles on

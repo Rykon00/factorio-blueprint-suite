@@ -5,11 +5,15 @@ from __future__ import annotations
 import dataclasses
 from typing import Any
 
-from . import em_upcycler, lds_shuffle
+from . import brick_upcycler, em_upcycler, lds_shuffle, raw_upcycler, self_recycler, steel_upcycler
 
 DESIGNS = {
     "lds-shuffle": lds_shuffle,
     "em-upcycler": em_upcycler,
+    "brick-upcycler": brick_upcycler,
+    "self-recycler": self_recycler,
+    "raw-upcycler": raw_upcycler,
+    "steel-upcycler": steel_upcycler,
 }
 
 

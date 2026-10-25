@@ -65,7 +65,7 @@ class Params:
     cable_modules: str = "productivity-module-3,productivity-module-3,productivity-module-3,productivity-module-3,speed-module-3"
     recycler_modules: str = "quality-module-3@rare"
     em_productivity: float = 0.5             # electromagnetic plant base productivity
-    request_amount: int = 40
+    request_amount: int = 100
     grid_cells: int = 0                      # 0 = as many 50x50 grid cells as needed
     buffer_storage: int = 6
     label: str = "EM upcycler (fbs)"
